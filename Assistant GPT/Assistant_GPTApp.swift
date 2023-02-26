@@ -11,7 +11,12 @@ import SwiftUI
 struct Assistant_GPTApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            #if os(iOS)
+            PhoneView()
+            #endif
+            #if os(macOS)
+            MacView()
+            #endif
         }
     }
 }
